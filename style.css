@@ -1,0 +1,147 @@
+/* Warm, editorial one-page layout */
+
+:root {
+  --paper: #faf6ef;
+  --ink: #2b2420;
+  --muted: #6b5f57;
+  --accent: #9a3b2a;
+  --rule: #e2d8ca;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.1875rem; /* 19px */
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 40rem; /* ~65 characters per line */
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem 3rem;
+}
+
+/* Masthead */
+
+.masthead {
+  text-align: center;
+  padding-bottom: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+.masthead h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 9vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Sections */
+
+.section {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section h2 {
+  margin: 0 0 1.25rem;
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section p {
+  margin: 0;
+}
+
+.lede {
+  font-size: 1.25em;
+  line-height: 1.6;
+}
+
+/* Interests list */
+
+.interests {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.interests li {
+  position: relative;
+  padding: 0.6rem 0 0.6rem 1.75rem;
+}
+
+.interests li + li {
+  border-top: 1px solid var(--rule);
+}
+
+.interests li::before {
+  content: "\2014"; /* em dash */
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* Footer */
+
+.colophon {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.colophon p {
+  margin: 0;
+}
+
+/* Phones */
+
+@media (max-width: 30rem) {
+  body {
+    font-size: 1.0625rem; /* 17px */
+  }
+
+  .page {
+    padding: 3.5rem 1.25rem 2.5rem;
+  }
+
+  .masthead {
+    padding-bottom: 2rem;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  .lede {
+    font-size: 1.15em;
+  }
+}
